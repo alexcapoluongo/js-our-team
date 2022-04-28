@@ -45,13 +45,13 @@ for (let i = 0; i < team.length; i++ ) {
     //bisogna concatenare con += altrimenti ti stampa sempre l'ultimo e non avviene la concatenazione tra gli elementi 
     document.getElementById('milestone2').innerHTML += `<br>${keyElement}`;
   }  
+  
+  // BONUS 1:
+  // trasformare la stringa foto in una immagine effettiva
   let imageName = element.image;
   let image = document.getElementById('img-container');
-  image.innerHTML = `<img src = "img/${imageName}">`;
+  image.innerHTML += `<img src = "img/${imageName}">`;
 }
-
-// BONUS 1:
-// trasformare la stringa foto in una immagine effettiva
 
 
 // BONUS 2:
