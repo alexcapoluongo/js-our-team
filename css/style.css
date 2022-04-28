@@ -64,8 +64,9 @@ section {
 
 .card-image {
   overflow: hidden;
-
   cursor: pointer;
+  display: flex;
+  justify-content: center;
 }
 
 .card-image img {

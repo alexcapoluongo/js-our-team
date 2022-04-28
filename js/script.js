@@ -60,7 +60,6 @@ for (let i = 0; i < team.length; i++ ) {
                               <p>${element.role}</p>
                             </div>
                           </div>`;
-
 }
 
 
