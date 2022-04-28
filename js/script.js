@@ -50,18 +50,39 @@ for (let i = 0; i < team.length; i++ ) {
   // trasformare la stringa foto in una immagine effettiva
   // BONUS 2:
   // organizzare i singoli membri in card/schede
-  let container = document.getElementById('team-container');
-  container.innerHTML += `<div class="team-card">
-                            <div class="card-image">
-                              <img src="img/${element.image}"/>
-                            </div>
-                            <div class="card-text">
-                              <h3>${element.name}</h3>
-                              <p>${element.role}</p>
-                            </div>
-                          </div>`;
+  
+  createCard(element.image, element.name, element.role);
+  function createCard(image, name, role) {
+
+    let container = document.getElementById('team-container');
+    container.innerHTML += `<div class="team-card">
+                              <div class="card-image">
+                                <img src="img/${image}"/>
+                              </div>
+                              <div class="card-text">
+                                <h3>${name}</h3>
+                                <p>${role}</p>
+                              </div>
+                            </div>`;
+  }
 }
 
 
 // BONUS 3:
 // Utilizzare gli input presenti nella pagina per permettere all'utente di aggiungere nuovi membri del team: cliccando sul pulsante "add" viene creato un nuovo oggetto, il quale viene inserito nell'array iniziale e viene stampata una nuova card con tutte le informazioni inserite dall'utente.
+
+//assegnare a bottone add una var
+const addMember = document.getElementById('addMemberButton');
+
+//creare una funzione eventlistener
+addMember.addEventListener('click',
+  function() {
+    //prelevare i dati inseriti dall'input
+    let nameUser = document.getElementById('name').value;
+    let roleUser = document.getElementById('role').value;
+    let imageUser = document.getElementById('image').value;
+
+    createCard(nameUser, roleUser, imageUser);
+
+  })
+
