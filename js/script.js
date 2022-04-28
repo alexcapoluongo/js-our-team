@@ -34,9 +34,26 @@ const team = [
 // MILESTONE 1:
 // stampare su console le informazioni di nome, ruolo e la stringa della foto
 
-for (let key in team) {
-    console.log(team[key]);
+// avvio un ciclo for che scorre tutti gli array
+for (let i = 0; i < team.length; i++ ) {
+  // -assegnare una variabile per ogni oggetto
+  const element = team[i];
+  // avvio un ciclo for-in per scorrere le keys all'interno degli oggetti
+  for (let key in element) {
+    const keyElement = element[key];
+    console.log(keyElement);
+    // stampare le stesse informazioni su DOM sottoforma di stringhe 
+    document.getElementById('milestone2').innerHTML += `<br>${keyElement}`;
+  }     
 }
 
-// MILESTONE 2:
-// stampare le stesse informazioni su DOM sottoforma di stringhe
+
+
+
+// document.getElementById('milestone2').innerHTML = keyElement;
+
+// // PROVA
+// let array = ['alex', 'ciao', 'persona'];
+// for (let i = 0; i < array.length; i++) {
+//   document.getElementById('milestone2').innerHTML = array[0] + array[1] + array[2];
+// }
