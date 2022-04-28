@@ -50,7 +50,7 @@ for (let i = 0; i < team.length; i++ ) {
   // trasformare la stringa foto in una immagine effettiva
   let imageName = element.image;
   let image = document.getElementById('img-container');
-  image.innerHTML += `<img src = "img/${imageName}">`;
+  image.innerHTML = `<img src = "img/${imageName}">`;
 }
 
 
