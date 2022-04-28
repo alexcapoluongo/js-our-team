@@ -27,11 +27,11 @@ const team = [
     {
       name: 'Barbara Ramos',
       role: 'Graphic Designer',
-      image: 'barbara-ramos-graphic-designer.jpg',
+      image:'barbara-ramos-graphic-designer.jpg',
     },
   ];
 
-// MILESTONE 1:
+// MILESTONE 1 & 2:
 // stampare su console le informazioni di nome, ruolo e la stringa della foto
 
 // avvio un ciclo for che scorre tutti gli array
@@ -41,19 +41,20 @@ for (let i = 0; i < team.length; i++ ) {
   // avvio un ciclo for-in per scorrere le keys all'interno degli oggetti
   for (let key in element) {
     const keyElement = element[key];
-    console.log(keyElement);
-    // stampare le stesse informazioni su DOM sottoforma di stringhe 
+    // stampare le stesse informazioni su DOM sottoforma di stringhe
+    //bisogna concatenare con += altrimenti ti stampa sempre l'ultimo e non avviene la concatenazione tra gli elementi 
     document.getElementById('milestone2').innerHTML += `<br>${keyElement}`;
-  }     
+  }  
+  let imageName = element.image;
+  let image = document.getElementById('img-container');
+  image.innerHTML = `<img src = "img/${imageName}">`;
 }
 
+// BONUS 1:
+// trasformare la stringa foto in una immagine effettiva
 
 
-
-// document.getElementById('milestone2').innerHTML = keyElement;
-
-// // PROVA
-// let array = ['alex', 'ciao', 'persona'];
-// for (let i = 0; i < array.length; i++) {
-//   document.getElementById('milestone2').innerHTML = array[0] + array[1] + array[2];
-// }
+// BONUS 2:
+// organizzare i singoli membri in card/schede
+// BONUS 3:
+// Utilizzare gli input presenti nella pagina per permettere all'utente di aggiungere nuovi membri del team: cliccando sul pulsante "add" viene creato un nuovo oggetto, il quale viene inserito nell'array iniziale e viene stampata una nuova card con tutte le informazioni inserite dall'utente.
