@@ -43,18 +43,26 @@ for (let i = 0; i < team.length; i++ ) {
     const keyElement = element[key];
     // stampare le stesse informazioni su DOM sottoforma di stringhe
     //bisogna concatenare con += altrimenti ti stampa sempre l'ultimo e non avviene la concatenazione tra gli elementi 
-    document.getElementById('milestone2').innerHTML += `<br>${keyElement}`;
+    // document.getElementById('milestone2').innerHTML += `<br>${keyElement}`;
   }  
   
   // BONUS 1:
   // trasformare la stringa foto in una immagine effettiva
-  let imageName = element.image;
-  let image = document.getElementById('img-container');
-  image.innerHTML = `<img src = "img/${imageName}">`;
+  // BONUS 2:
+  // organizzare i singoli membri in card/schede
+  let container = document.getElementById('team-container');
+  container.innerHTML += `<div class="team-card">
+                            <div class="card-image">
+                              <img src="img/${element.image}"/>
+                            </div>
+                            <div class="card-text">
+                              <h3>${element.name}</h3>
+                              <p>${element.role}</p>
+                            </div>
+                          </div>`;
+
 }
 
 
-// BONUS 2:
-// organizzare i singoli membri in card/schede
 // BONUS 3:
 // Utilizzare gli input presenti nella pagina per permettere all'utente di aggiungere nuovi membri del team: cliccando sul pulsante "add" viene creato un nuovo oggetto, il quale viene inserito nell'array iniziale e viene stampata una nuova card con tutte le informazioni inserite dall'utente.
